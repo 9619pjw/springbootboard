@@ -1,0 +1,51 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+    <!-- 공지글 양식 -->
+    <div>
+        <h5>공지글</h5>
+        <ul>
+            <!-- 공지글 목록을 반복 출력합니다. -->
+            <table class="table">
+                <thead class="table-dark">
+                    <tr class ="text-center">
+                        <th>번호</th>
+                        <th style="width:50%">제목</th>
+                        <th>글쓴이</th>
+                        <th>작성일자</th>
+                    </tr>
+                </thead>
+                <tbody th:each="post, loopStat : ${notices}">
+                <tr class="text-center">
+                    <!--게시물 번호 적용-->
+                    <td th:text="${notices.size() - loopStat.index}"></td>
+                    <!-- 제목 클릭 시 해당 게시물 상세 페이지로 이동합니다.-->
+                    <td><a th:href="@{/post/detail/{id}(id=${post.id})}" th:text="${post.subject}" style="color: black; text-decoration: none;"></a></td>
+
+                    <!-- 글쓴이 출력 -->
+                    <td><span th:if="${post.author != null}" th:text="${post.author.username}"></span></td>
+
+                    <!-- 작성일자 출력 -->
+                    <!-- th:text 디렉티브를 사용하여 td 태그의 텍스트 내용을 post.createDate 값으로 설정합니다.-->
+                    <td th:text="${#temporals.format(post.createDate, 'yyyy-MM-dd HH:mm')}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </ul>
+    </div>
+    <!-- 공지글 양식 끝-->
+    <!-- page와 keyword 동시에 GET으로 요청할 수 있는 searchForm -->
+    <form th:action="@{/post/list}" method="get" id="searchForm">
+        <input type="hidden" id="keyword" name="keyword" th:value="${keyword}">
+        <input type="hidden" id="page" name="page" th:value="${paging.number}">
+    </form>
+</div>
+<script layout:fragment="script" type='text/javascript'>
+    const page_elements = document.getElementsByClassName("page-link");
+    Array.from(page_elements).forEach(function(element) {
+        element.addEventListener('click', function() {
+            document.getElementById('page').value = this.dataset.page;
+            document.getElementById('searchForm').submit();
+        });
+    });
+</script>
+</html>

@@ -1,0 +1,150 @@
+package com.mysite.springbootboard.base;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@Getter
+@RequiredArgsConstructor
+public enum CommonErrorCode implements ErrorCode {
+    
+    SUCCESS                          ("0", "success","Completed"),
+
+	//공통코드 에러
+	EXIST_GROUP_CODE_NAME			 ("ERR_0100", "common code error","이미 사용중인 그룹코드입니다."),
+
+	//System 에러
+	NULL_PARAMETER                ("ERR_1001", "system error","null-parameter"),
+
+	INVALID_PARAMETER                ("ERR_1002", "system error","invalid-parameter"),
+	RESOURCE_NOT_FOUND               ("ERR_1003", "system error","리소스가 존재 하지 않습니다"),
+
+	INTERNAL_SERVER_ERROR            ("ERR_1004", "system error","내부 서버에러"),
+	UNI_API_SERVER_ERROR            ("ERR_1005", "system error","통합인증서버 API 호출 에러"),
+	MAIL_TRY_TEN_OVER            ("ERR_1006", "Verification attempts exceeded","You have exceeded the maximum number of verification attempts. Please try again later."),
+	SEND_API_SERVER_ERROR            ("ERR_1007", "system error","Sendbird API 호출 에러"),
+	WRONG_PHONE_NUMBER               ("ERR_1008", "phone error","잘못된 국가코드 전화번호입니다."),
+	MAIL_TIME_OVER               ("ERR_1009", "The verification code you entered has expired. Please request a new code and try again.",""),
+	MAIL_24HOURS_FORBID              ("ERR_1010", "Verification attempts exceeded","You have exceeded the maximum number of verification attempts. Please try again 24hour later."),
+	LOCATION_NOT_FOUND              ("ERR_1011", "location error","나의 위치정보가 없습니다."),
+	PROFILE_SAME_ID_ERROR              ("ERR_1012", "profile error","상대방의 ID와 내 ID가 같습니다."),
+	IS_USED_PHONENUMBER              ("ERR_1013", "phone erroㄹr","이미 사용중인 휴대폰번호입니다."),
+	HEADER_NOT_FOUND                ("ERR_1014", "header error","null-header"),
+	HEADER_NOT_VALID_UUID                ("ERR_1015", "header error","invalid-uuid"),
+	IS_DAU_YESTERDAY                ("ERR_1016", "dau error","해당 날짜는 이미 dau 수집처리 되었습니다."),
+	INVALID_PUBLIC_KEY                    ("ERR_1017", "user error","publicKey가 등록되지 않은 사용자가 있습니다."),
+	IS_USED_USERID            ("ERR_1018", "The ID you entered is already in use. Please enter a different ID",""),
+	QR_SCAN_NO_FOUND            ("ERR_1019", "No user found with this QR code. Please double-check and try again.",""),
+	FILE_SIZE_OVER            ("ERR_1020", "You can attach up to 5 files, 30 MB each.",""),
+	FILE_FORMAT_ERROR            ("ERR_1021", "You can attach up jpg, jpeg, png, mp4, mov",""),
+	SEARCH_UNAVAILABLE            ("ERR_1022", "The user has chosen to keep their account private. You cannot automatically add or search for them using their phone number. Please try a different method.",""),
+	QUESTION_SET_SEVER_ERROR            ("ERR_1023", "Your question could not be submitted due to a server error. We apologize for the inconvenience. Please try again later.",""),
+	WEBHOOK_SERVER_ERROR				("ERR_1024", "system error","Webhook API 호출 에러"),
+	FILE_EMPTY            			("ERR_1025", "File is Empty","파일이 없습니다."),
+	FILE_IO_ERROR            			("ERR_1026", "FILE I/O ERROR","파일 I/O 에러"),
+	
+	//"login"ERR_
+	INVALID_USER                     ("ERR_2001", "login error","아이디 또는 비밀번호를 확인해 주세요."),
+	INVALID_PASSWORD                 ("ERR_2002", "login error","비밀번호를 확인해 주세요."),
+	LOGIN_TRY_OVER                   ("ERR_2003", "login error","로그인 수행시도 횟수가 초과 했습니다. 5분루 접속하세요."),
+	SMS_TRY_OVER                     ("ERR_2004", "SMS error","SMS 인증번호 수신 서비스는 하루 최대 5회 제한입니다."),
+	ALREADY_USED_EMAIL               ("ERR_2005", "email error","이미 등록된 이메일이 있습니다."),
+	INVALID_ID                     ("ERR_2006", "Oops, this ID does not seem to exist. Please check your entry and try again.",""),
+	SUSPEND_USER                     ("ERR_2007", "This ID has been suspended. If you think this is a mistake, please contact our support team.",""),
+	EMPTY_USER                       ("ERR_2008", "user error", "재로그인 필요"),
+	INVALID_USER_HEADER              ("ERR_2009", "user error", "로그인 정보가 일치하지 않습니다."),
+	AUTHORITY_NOT_USER             ("ERR_2010", "user error", "권한이 없습니다"),
+	WRONG_APPROACH					("ERR_2011", "user error", "잘못된 접근입니다."),
+	ALREADY_USED_ID					("ERR_2012", "user error", "이미 등록된 사용자입니다."),
+
+	//"JWT ERROR"ERR_
+	INVALID_JWT						("ERR_3001", "Invalid token", "유효하지 않은 토큰입니다."),
+	EMPTY_JWT						("ERR_3002", "Token is empty", "토큰이 비어있습니다."),
+	ERROR_JWT						("ERR_3003", "token check error", "토큰 체크 오류 발생"),
+	INSERT_USER_ERROR_SB			("ERR_4000", "Check User Id", "Sendbird 가입 실패. ID 중복"),
+	INSERT_USER_ERROR_DB			("ERR_4001", "Check User Id", "DB 등록 실패. 입력값 확인 필요"),
+
+		//"sendbird error"ERR_
+	SENDBIRD_400201					("ERR_400201", "Channel Not Found", "채널을 찾을 수 없습니다."),
+
+	//"api error"ERR_
+	API_400100						("ERR_400100", "system error",	"authUserAdd redis error"),
+	API_400101						("ERR_400101", "system error",	"authUserAdd redis HMSET error"),
+	API_400102						("ERR_400102", "system error",	"authUserAdd redis SET error"),
+	API_400103						("ERR_400103", "system error",	"UserModify redis error"),
+	API_400104						("ERR_400104", "system error",	"ReissueAuthKey redis error"),
+	API_400105						("ERR_400105", "system error",	"RedisUserCheckByPassword redis error"),
+	API_400106						("ERR_400106", "system error",	"RedisUserCheckByAuthKey redis error"),
+	API_400107						("ERR_400107", "system error",	"RedisUserLogout redis error"),
+	API_400108						("ERR_400108", "system error",	"UserDelete redis error"),
+	API_400109						("ERR_400109", "system error",	"authUserModify redis HMSet error"),
+	API_400110						("ERR_400110", "system error",	"getRedisReadWrite redis read-write error"),
+	API_400111						("ERR_400111", "system error",	"getRedisReadWrite redis write error, read work"),
+	API_400112						("ERR_400112", "system error",	"UserPasswordUpdate redis error"),
+	API_400113						("ERR_400113", "system error",	"authUserAdd redis EXPIRE error"),
+	API_400114						("ERR_400114", "system error",	"authUserAdd redis HSET error"),
+	API_400115						("ERR_400115", "system error",	"authUserModify redis DEL error"),
+	API_400116						("ERR_400116", "system error",	"authUserModify redis SET error"),
+	API_400117						("ERR_400117", "system error",	"usedUserClear redis HDEL error"),
+	API_400118						("ERR_400118", "system error",	"UserDelete redis DELerror"),
+	API_400119						("ERR_400119", "system error",	"MakePhoneCertNumber HMSET error"),
+	API_400120						("ERR_400120", "system error",	"Redis HGET error"),
+	API_400121						("ERR_400121", "system error",	"Redis HSET error"),
+	API_400122						("ERR_400122", "system error",	"Redis HMSET error"),
+	API_400123						("ERR_400123", "system error",	"Redis Transaction error"),
+	API_400124						("ERR_400124", "system error",	"Redis Transaction HSET error"),
+	API_400125						("ERR_400125", "system error",	"Redis HGETALL error"),
+	API_400200						("ERR_400200", "system error",	"UserAdd mssql error"),
+	API_400201						("ERR_400201", "system error",	"UserModify mssql error"),
+	API_400202						("ERR_400202", "system error",	"UserInfo mssql error"),
+	API_400203						("ERR_400203", "system error",	"UserDelete mssql error"),
+	API_400204						("ERR_400204", "system error",	"UserPasswordUpdate msSQL error"),
+	API_400205						("ERR_400205", "system error",	"usedUserClear mssql error"),
+	API_400206						("ERR_400206", "system error",	"msSQL UPDATE error"),
+	API_400207						("ERR_400207", "system error",	"msSQL SELECT error"),
+	API_400210						("ERR_400210", "system error",	"msSQL Transaction error"),
+	API_400211						("ERR_400211", "system error",	"msSQL Transaction UPDATE error"),
+	API_400301						("ERR_400301", "blocked user", "blocked user"),
+	API_400302						("ERR_400302", "withdrawal user", "withdrawal user"),
+	API_400303						("ERR_400303", "you are already a registered user", "you are already a registered user"),
+	API_400304						("ERR_400304", "The ID you entered is already in use. Please enter a different ID", "The ID you entered is already in use. Please enter a different ID"),
+	API_400305						("ERR_400305", "user id not exist", "user id not exist"),
+	API_400311						("ERR_400311", "uuid already exists", "uuid already exists"),
+	API_400312						("ERR_400312", "uuid not registered", "uuid not registered"),
+	API_400401						("ERR_400401", "grant type error", "grant type error"),
+	API_400402						("ERR_400402", "request data error", "request data error"),
+	API_400403						("ERR_400403", "no phone number and email data.", "no phone number and email data"),
+	API_400411						("ERR_400411", "you are not subscribed as a member", "you are not subscribed as a member"),
+	API_400412						("ERR_400412", "user not found",	"user not found"),
+	API_400413						("ERR_400413", "DB not found",	"DB not found"),
+	API_400414						("ERR_400414", "registered phone number or emails do not match",	"registered phone number or emails do not match"),
+	API_400415						("ERR_400415", "Invalid e-mail address.",	"Invalid e-mail address."),
+	API_400416						("ERR_400416", "registered phone number do not match",	"registered phone number not found or does not match"),
+	API_400417						("ERR_400417", "last access time read error", "registered device info do not match, SMS certification is required"),
+	API_400418						("ERR_400418", "This Email is already in use", "This Email is already in use"),
+	API_400421						("ERR_400421", "header infomation not found", "header infomation not found"),
+	API_400422						("ERR_400422", "header authorization error", "header authorization error"),
+	API_400441						("ERR_400441", "password mismatch", "password mismatch"),
+	API_400442						("ERR_400442", "angkorId mismatch", "angkorId mismatch"),
+	API_400443						("ERR_400443", "authkey mismatch", "authkey mismatch"),
+	API_400444						("ERR_400444", "phone number mismatch", "phone number mismatch"),
+	API_400501						("ERR_400501", "applicatioin not found",	"redis application data not found"),
+	API_400502						("ERR_400502", "application setting error",	"redis application setting data error"),
+	API_400601						("ERR_400601", "phone authentication request exceeded error", "phone authentication request exceeded error"),
+	API_400602						("ERR_400602", "error count exceeded", "error count exceeded"),
+	API_400603						("ERR_400603", "Invalid code. Please check your email and try again.", "Invalid code. Please check your email and try again."),
+    API_400603_SMS					("ERR_400604", "Invalid confirmation code. Please check your SMS to find the correct code.", "Invalid confirmation code. Please check your SMS to find the correct code."),
+	API_400604						("ERR_400605", "authentication number entry timeout", "authentication number entry timeout"),
+	API_400611						("ERR_400611", "system error",	"sms session error"),
+	API_400612						("ERR_400612", "system error",	"sms publish error"),
+	API_400613						("ERR_400613", "Invalid phone number. Please enter a valid phone number.",	"Invalid phone number. Please enter a valid phone number."),
+	API_400701						("ERR_400701", "network error",	"sendbird network error"),
+	API_400702						("ERR_400702", "create angkorid error",	"sendbird create user error"),
+	API_400801						("ERR_400801", "Invalid Value", "Invalid Translate targetLanguage Code."),
+	API_400802						("ERR_400802", "information not found", "Please enter the required information."),
+
+	DATA_ALREADY_EXISTS						("ERR_500101", "Data already exists", "Data already exists."),
+	MSSQL_SERVER_RROR						("ERR_500102", "msSQL ERROR", "msSQL ERROR.")
+	;
+	private final String errorcode;
+	private final String gmessage;
+	private final String dmessage;
+}
