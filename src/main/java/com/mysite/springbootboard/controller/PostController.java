@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.HashMap;
 
 @RequestMapping("/post")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @RestController
 public class PostController {
@@ -28,6 +29,7 @@ public class PostController {
     private final UserService userService;
 
     // 게시글 목록
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping("/list")
     @ResponseBody
     public ResCommDTO list(@RequestParam(value="page", defaultValue="0") int page,
@@ -64,6 +66,7 @@ public class PostController {
     }
 
     // 공지글 목록
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping("/notices")
     @ResponseBody
     public ResCommDTO noticeList(@RequestParam(value="page", defaultValue="0") int page,
@@ -98,6 +101,7 @@ public class PostController {
     }
 
     // 상세 보기
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping(value = "/detail/{id}")
     @ResponseBody
     public ResCommDTO detail(@PathVariable("id") Integer id, CommentForm commentForm){
@@ -126,14 +130,7 @@ public class PostController {
     }
 
     // 게시글 생성
-    /*x
-    @PreAuthorize("isAuthenticated()")
-    @GetMapping("/create")
-    public String postCreate(PostForm postForm){
-        return "post_form";
-    }
-    */
-
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @PostMapping("/create")
     @ResponseBody
     // subject, content 항목을 지닌 폼이 전송되면
@@ -164,6 +161,7 @@ public class PostController {
     }
 
     // 게시글 수정
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping("/modify/{id}")
     @ResponseBody
     public ResCommDTO getPostModify(@RequestBody PostForm postForm, @PathVariable("id") Integer id){
@@ -191,6 +189,7 @@ public class PostController {
     }
 
     // 게시글 수정 내역 저장
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @PostMapping("/modify/{id}")
     @ResponseBody
     public ResCommDTO postModify(@RequestBody PostForm postForm,
@@ -218,6 +217,7 @@ public class PostController {
     }
 
     // 게시글 삭제 ... URL 처리
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping("/delete/{id}")
     @ResponseBody
     public ResCommDTO postDelete(@PathVariable("id") Integer id){
@@ -245,6 +245,7 @@ public class PostController {
 
     // 추천 버튼 눌렀을때 호출되는 URL 처리
     // querystring 방식으로 {URL}?name= 으로 name 값 설정, {id} id 값 추가
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @GetMapping("/vote/{id}")
     public ResCommDTO postVote(@RequestParam String name, @PathVariable("id") Integer id){
         try {

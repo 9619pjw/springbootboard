@@ -19,11 +19,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/user")
 @RequiredArgsConstructor
@@ -37,16 +33,10 @@ public class UserController {
 
     private final UserSecurityService userSecurityService;
 
-    // 회원가입 템플릿 렌더링
-    /*
-    @GetMapping("/signup")
-    public String signup(UserCreateForm userCreateForm) {
-        return "signup_form";
-    }
-    */
-
      // 회원가입 진행
      // 로그인 성공 처리 - 프론트에서 로컬 스토리지, 쿠키로 세션 유지
+    
+    @CrossOrigin(originPatterns = "http://localhost:3000")
     @PostMapping("/login")
     public ResponseEntity<String> authenticateUser(@RequestBody UserLoginForm loginDto) {
         Authentication authentication = authenticationManager
@@ -85,12 +75,4 @@ public class UserController {
                                                             CommonErrorCode.SUCCESS.getDmessage());
         return res;
     }
-
-    // 로그인 URL
-    /*
-    @GetMapping("/login")
-    public String login() {
-        return "login_form";
-    }
-     */
 }

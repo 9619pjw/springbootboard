@@ -29,8 +29,7 @@ public class CommentController {
 
     private final UserService userService;
 
-    // 댓글 저장
-    // 게시글의 ID 값을 받아 코멘트 생성
+    // 댓글 저장 ... 게시글의 ID 값을 받아 생성
     @PostMapping("/create/{id}")
     @ResponseBody
     public ResCommDTO createComment(@PathVariable("id") Integer id,
@@ -138,8 +137,7 @@ public class CommentController {
         return res;
     }
 
-    // 댓글 추천 URL 처리
-    // querystring 방식으로 name 값 추가
+    // 댓글 추천 URL 처리 ... querystring 방식으로 name 값 추가
     @GetMapping("/vote/{id}")
     @ResponseBody
     public ResCommDTO commentVote(@RequestParam String name, 
