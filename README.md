@@ -1,11 +1,11 @@
 # Q&A 게시판 프로젝트
 ------------
-## FusS! SNS형 크라우드 펀딩 서비스의 Q&A 게시판입니다. 
+## FunS! SNS형 크라우드 펀딩 서비스의 Q&A 게시판입니다. 
 
 ### Function
 <ol>
     <li>게시판 메인 화면</li>
-    ![Q A 게시판 메인](https://github.com/9619pjw/springbootboard/assets/97871451/8e346b16-78a6-4e1f-be35-c5bbcf9b6d2c)
+    <img src="https://github.com/9619pjw/springbootboard/assets/97871451/4ef97c1b-4a18-46dc-9952-ffd0d3be6145">
 
     <li>게시판 글 작성</li>
     
