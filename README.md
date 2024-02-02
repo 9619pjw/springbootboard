@@ -4,11 +4,11 @@
 
 ### Function
 <ol>
-    <li>게시판 메인 화면
-        ![Q A 게시판 메인](https://github.com/9619pjw/springbootboard/assets/97871451/32716103-2909-468b-ae1e-a62a256499c0)
+    <li>게시판 메인 화면</li>
+    ![Q A 게시판 메인](https://github.com/9619pjw/springbootboard/assets/97871451/8e346b16-78a6-4e1f-be35-c5bbcf9b6d2c)
 
-</li>
     <li>게시판 글 작성</li>
+    
     <li>게시판 글 상세</li>
     <li>게시판 글 수정</li>
     <li>게시판 글 삭제</li>
