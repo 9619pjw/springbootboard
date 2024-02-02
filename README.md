@@ -8,6 +8,7 @@
         <img src="https://github.com/9619pjw/springbootboard/assets/97871451/4ef97c1b-4a18-46dc-9952-ffd0d3be6145">
         <br/>
         게시판 메인 화면에는 공지글, 인기글, 일반 게시글을 확인할 수 있습니다.
+        <hr/>
     </li>
     <li>게시판 글 작성
         <br/>
