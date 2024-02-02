@@ -45,7 +45,16 @@
 <ol>
     <li>관리자 공지글 작성
         <br/>
-        <img src="https://github.com/9619pjw/springbootboard/assets/97871451/a4a070할 수 있습니다.
+        <img src="https://github.com/9619pjw/springbootboard/assets/97871451/a4a070b4-1e58-487e-92b2-fd512377cdaa">
+        <br/>
+        관리자는 공지글을 작성할 수 있습니다. 공지글은 화면 최상단에 노출됩니다.
+        <br/>
+    </li>
+    <li>관리자 게시판 관리
+        <br/>
+        <img src="https://github.com/9619pjw/springbootboard/assets/97871451/dc8226e7-d143-425b-a7b4-c29c96ece275">
+        <br/>
+        관리자는 운영원칙을 위반한 게시글을 삭제할 수 있습니다.
         <br/>
     </li>
 </ol>
