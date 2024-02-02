@@ -4,7 +4,9 @@
 
 ### Function
 <ol>
-    <li>게시판 메인 화면![Q A 게시판 메인](https://github.com/9619pjw/springbootboard/assets/97871451/d9f459b0-bcf6-41dc-9438-336a1168f206)
+    <li>게시판 메인 화면
+        ![Q A 게시판 메인](https://github.com/9619pjw/springbootboard/assets/97871451/32716103-2909-468b-ae1e-a62a256499c0)
+
 </li>
     <li>게시판 글 작성</li>
     <li>게시판 글 상세</li>
