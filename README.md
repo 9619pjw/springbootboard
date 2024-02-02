@@ -4,11 +4,8 @@
 
 ### Function
 <ol>
-    <li>게시판 메인 화면</li>
-    <img src="https://github.com/9619pjw/springbootboard/assets/97871451/4ef97c1b-4a18-46dc-9952-ffd0d3be6145">
-
+    <li>게시판 메인 화면<img src="https://github.com/9619pjw/springbootboard/assets/97871451/4ef97c1b-4a18-46dc-9952-ffd0d3be6145"></li>
     <li>게시판 글 작성</li>
-    
     <li>게시판 글 상세</li>
     <li>게시판 글 수정</li>
     <li>게시판 글 삭제</li>
