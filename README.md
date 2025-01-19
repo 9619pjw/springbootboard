@@ -3,6 +3,10 @@
 ### Front-End Link
 https://github.com/9619pjw/P_Project/tree/main/src/app/post
 
+### ERD
+![image](https://github.com/user-attachments/assets/25fe37d5-98be-4be7-b756-7e9fe10f5cde)
+
+
 ### Function
 <ol>
     <li>게시판 메인 화면
