@@ -15,12 +15,16 @@ https://github.com/9619pjw/P_Project/tree/main/src/app/post
         <br/>
         게시판 메인 화면에는 공지글, 인기글, 일반 게시글을 확인할 수 있습니다.
         <br/>
+        <br/>
+        <br/>
     </li>
     <li>게시판 글 작성
         <br/>
         <img src="https://github.com/9619pjw/springbootboard/assets/97871451/ac5e4d8c-bab7-4d3e-8ad9-4818e9d2518b">
         <br/>
         사용자는 로그인했을 경우에만 글을 작성하여 등록할 수 있습니다.
+        <br/>
+        <br/>
         <br/>
     </li>
     <li>게시판 글 상세
@@ -31,6 +35,8 @@ https://github.com/9619pjw/P_Project/tree/main/src/app/post
         <br/>
         이때 추천을 많이 받은 게시물은 인기글에 등록됩니다.
         <br/>
+        <br/>
+        <br/>
     </li>
     <li>게시판 글 수정
         <br/>
@@ -38,12 +44,16 @@ https://github.com/9619pjw/P_Project/tree/main/src/app/post
         <br/>
         사용자는 자신이 작성한 게시글의 내용을 수정할 수 있습니다.
         <br/>
+        <br/>
+        <br/>
     </li>
     <li>게시판 글 삭제
         <br/>
         <img src="https://github.com/9619pjw/springbootboard/assets/97871451/3876857a-cd5f-4b7a-8dbe-9e05f94c2ce7">
         <br/>
         사용자는 자신이 작성한 게시글을 삭제할 수 있습니다.
+        <br/>
+        <br/>
         <br/>
     </li>
 </ol>
@@ -57,12 +67,16 @@ https://github.com/9619pjw/P_Project/tree/main/src/app/post
         <br/>
         관리자는 공지글을 작성할 수 있습니다. 공지글은 화면 최상단에 노출됩니다.
         <br/>
+        <br/>
+        <br/>
     </li>
     <li>관리자 게시판 관리
         <br/>
         <img src="https://github.com/9619pjw/springbootboard/assets/97871451/dc8226e7-d143-425b-a7b4-c29c96ece275">
         <br/>
         관리자는 운영원칙을 위반한 게시글을 삭제할 수 있습니다.
+        <br/>
+        <br/>
         <br/>
     </li>
 </ol>
